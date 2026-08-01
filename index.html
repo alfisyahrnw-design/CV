@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfi Syahr Nur Widenky — HR Portfolio</title>
+<meta name="description" content="HR Specialist &amp; People Operations — Alfi Syahr Nur Widenky. Recruitment, digital HR compliance, and psychological assessment systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  /* ============ TOKENS ============ */
+  :root{
+    --paper: #EFE7D3;
+    --paper-deep: #E4D9BC;
+    --panel: #FAF6EA;
+    --ink: #1E2A38;
+    --ink-soft: #5B5744;
+    --ink-faint: #6B6650;
+    --stamp-red: #A6362C;
+    --teal: #2F6B5C;
+    --gold: #C0912F;
+    --gold-text: #8A5F17;
+    --line: rgba(30,42,56,0.16);
+
+    --display: 'Anton', sans-serif;
+    --serif: 'Source Serif 4', serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    --tab-w: 84px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  ::selection{ background:var(--stamp-red); color:var(--panel); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--stamp-red); outline-offset:3px; }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 40px; }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--stamp-red);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--stamp-red);
+    display:inline-block;
+  }
+
+  h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.01em; margin:0; }
+  .section-title{
+    font-size:clamp(34px,5vw,52px);
+    line-height:1;
+    text-transform:uppercase;
+    margin-bottom:36px;
+  }
+
+  /* ============ FOLDER-TAB SIDE NAV ============ */
+  .tabnav{
+    position:fixed;
+    top:0; left:0; bottom:0;
+    width:var(--tab-w);
+    background:var(--ink);
+    z-index:50;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:26px 0;
+    border-right:1px solid rgba(255,255,255,.08);
+  }
+  .tabnav .mark{
+    font-family:var(--display);
+    color:var(--panel);
+    font-size:20px;
+    writing-mode:vertical-rl;
+    margin-bottom:34px;
+    letter-spacing:.04em;
+  }
+  .tabnav .mark span{ color:var(--gold); }
+  .tabnav ul{
+    list-style:none; margin:0; padding:0;
+    display:flex; flex-direction:column; gap:4px;
+    flex:1;
+  }
+  .tabnav a{
+    display:block;
+    writing-mode:vertical-rl;
+    text-decoration:none;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(250,246,234,.55);
+    padding:16px 0;
+    border-left:2px solid transparent;
+    transition:color .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .tabnav a:hover, .tabnav a:focus-visible{
+    color:var(--panel);
+    border-left-color:var(--gold);
+    background:rgba(255,255,255,.04);
+    outline:none;
+  }
+  .tabnav a.active{ color:var(--panel); border-left-color:var(--stamp-red); }
+  .tabnav .foot{
+    font-family:var(--mono); font-size:10px; color:rgba(250,246,234,.35);
+    writing-mode:vertical-rl; letter-spacing:.1em;
+  }
+
+  main{ margin-left:var(--tab-w); }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+    background:
+      repeating-linear-gradient(135deg, rgba(30,42,56,0.025) 0 2px, transparent 2px 26px),
+      var(--paper);
+  }
+  .hero .field-marks{
+    position:absolute; top:28px; left:40px; right:40px;
+    display:flex; justify-content:space-between;
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em;
+    color:var(--ink-faint); text-transform:uppercase;
+  }
+  .hero .field-marks .status{ color:var(--teal); font-weight:600; }
+  .hero .field-marks .status::before{
+    content:"●"; margin-right:6px; font-size:8px; position:relative; top:-2px;
+  }
+
+  .hero-watermark{
+    position:absolute; left:-.03em; bottom:-2vw;
+    font-family:var(--display); font-size:clamp(140px,24vw,380px);
+    color:transparent; -webkit-text-stroke:1px rgba(30,42,56,.07);
+    line-height:1; z-index:1; pointer-events:none; user-select:none;
+    white-space:nowrap; letter-spacing:-.01em;
+  }
+
+  .hero-photo{
+    position:absolute;
+    right:2%;
+    bottom:46px;
+    height:80%;
+    max-height:700px;
+    filter: drop-shadow(0 30px 40px rgba(30,42,56,.28));
+    z-index:2;
+  }
+  .hero-photo img{ height:100%; width:auto; display:block; }
+
+  .frame-corner{ position:absolute; width:20px; height:20px; z-index:4; }
+  .frame-corner.tl{ top:-9px; left:-9px; border-top:2px solid var(--ink); border-left:2px solid var(--ink); }
+  .frame-corner.tr{ top:-9px; right:-9px; border-top:2px solid var(--ink); border-right:2px solid var(--ink); }
+  .frame-corner.bl{ bottom:-9px; left:-9px; border-bottom:2px solid var(--ink); border-left:2px solid var(--ink); }
+  .frame-corner.br{ bottom:-9px; right:-9px; border-bottom:2px solid var(--ink); border-right:2px solid var(--ink); }
+
+  .photo-stamp{
+    position:absolute; left:-8%; bottom:8%; z-index:5;
+    width:104px; height:104px;
+    background:var(--paper);
+  }
+
+  /* ============ ENTRANCE REVEAL ============ */
+  @keyframes revealUp{
+    from{ opacity:0; transform:translateY(20px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .reveal, .reveal-line{
+    animation:revealUp .75s cubic-bezier(.2,.8,.2,1) both;
+    animation-delay:var(--d,0s);
+  }
+  .reveal-line{ display:inline-block; }
+
+  /* ============ HERO TICKER ============ */
+  .hero-ticker{
+    position:absolute; left:0; right:0; bottom:0; height:46px;
+    background:var(--ink); overflow:hidden; z-index:6;
+    display:flex; align-items:center;
+    border-top:1px solid rgba(255,255,255,.08);
+  }
+  .ticker-track{
+    display:flex; gap:30px; white-space:nowrap; will-change:transform;
+    animation:tickerScroll 30s linear infinite;
+  }
+  .ticker-track span{
+    font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:rgba(250,246,234,.62);
+  }
+  .ticker-track span.dot{ color:var(--stamp-red); }
+  @keyframes tickerScroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+  /* ============ SCROLL CUE ============ */
+  .scroll-cue{
+    position:absolute; left:40px; bottom:66px; z-index:6;
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none; color:var(--ink-soft);
+    font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  }
+  .scroll-cue .arrow{
+    width:1px; height:30px; background:var(--ink-soft); position:relative; overflow:hidden;
+  }
+  .scroll-cue .arrow::after{
+    content:""; position:absolute; left:-2px; top:0; width:5px; height:5px;
+    border-radius:50%; background:var(--stamp-red);
+    animation:cueMove 1.7s ease-in-out infinite;
+  }
+  @keyframes cueMove{
+    0%{ top:0; opacity:0; }
+    18%{ opacity:1; }
+    85%{ opacity:1; }
+    100%{ top:100%; opacity:0; }
+  }
+
+  .hero-inner{
+    position:relative; z-index:3;
+    width:100%;
+    padding:150px 40px 76px;
+  }
+  .hero-inner .eyebrow{ margin-left:2px; }
+  .hero h1{
+    font-size:clamp(52px, 10.2vw, 128px);
+    text-transform:uppercase;
+    line-height:.92;
+    color:var(--ink);
+    max-width:820px;
+  }
+  .hero h1 .last{ color:var(--stamp-red); }
+
+  .hero-role{
+    font-family:var(--mono);
+    font-size:clamp(13px,1.6vw,16px);
+    letter-spacing:.06em;
+    color:var(--ink-soft);
+    margin:22px 0 0;
+    max-width:520px;
+  }
+
+  .hero-doc-strip{
+    margin-top:56px;
+    border-top:1px solid var(--line);
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+  }
+  .hero-doc-strip .field{
+    flex:1 1 200px;
+    padding:16px 22px 22px 0;
+    border-right:1px solid var(--line);
+  }
+  .hero-doc-strip .field:last-child{ border-right:none; }
+  .hero-doc-strip .field .k{
+    font-family:var(--mono); font-size:10px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); display:block; margin-bottom:6px;
+  }
+  .hero-doc-strip .field .v{ font-family:var(--mono); font-size:14px; color:var(--ink); font-weight:500; }
+
+  .hero-cta{ display:flex; gap:14px; margin-top:30px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:14px 22px;
+    border:1px solid var(--ink);
+    display:inline-block;
+    transition:transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn-solid{ background:var(--ink); color:var(--panel); }
+  .btn-solid:hover{ transform:translate(-2px,-2px); background:var(--stamp-red); border-color:var(--stamp-red); }
+  .btn-ghost:hover{ transform:translate(-2px,-2px); background:var(--ink); color:var(--panel); }
+
+  /* ============ GENERIC SECTION ============ */
+  section{ padding:110px 0; border-bottom:1px solid var(--line); }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:30px;
+    margin-bottom:50px; flex-wrap:wrap;
+  }
+  .section-head p{ max-width:380px; color:var(--ink-soft); margin:0 0 30px; font-size:15.5px; }
+
+  /* ============ STAMP ============ */
+  .stamp{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border:2.5px solid var(--stamp-red);
+    color:var(--stamp-red);
+    border-radius:50%;
+    font-family:var(--mono);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    transform:rotate(-7deg) scale(.82);
+    opacity:.32;
+    transition:transform .5s cubic-bezier(.2,1.4,.4,1), opacity .4s ease;
+  }
+  .stamp.stamped{ transform:rotate(-7deg) scale(1); opacity:.92; }
+  .stamp .num{ font-family:var(--display); font-size:22px; line-height:1; margin-bottom:2px;}
+  .stamp .lbl{ font-size:8.5px; letter-spacing:.06em; max-width:80px; line-height:1.2; }
+
+  @media (prefers-reduced-motion: reduce){
+    .stamp{ transition:none; transform:rotate(-7deg) scale(1); opacity:.92; }
+    html{ scroll-behavior:auto; }
+    .reveal, .reveal-line{ animation:none; opacity:1; transform:none; }
+    .ticker-track{ animation:none; }
+    .scroll-cue .arrow::after{ animation:none; top:50%; opacity:1; }
+  }
+
+  /* ============ ABOUT ============ */
+  #about .grid{
+    display:grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap:60px;
+  }
+  .about-copy p{ margin:0 0 18px; font-size:17.5px; color:var(--ink); }
+  .about-copy strong{ color:var(--stamp-red); font-weight:600; }
+  .about-copy em{ font-style:normal; color:var(--teal); font-weight:600; }
+
+  .chip-row{ display:flex; flex-wrap:wrap; gap:60px; margin-top:20px; }
+
+  /* ============ EXPERIENCE ============ */
+  .job{
+    display:grid;
+    grid-template-columns: 200px 1fr 130px;
+    gap:26px;
+    padding:30px 0;
+    border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .job:last-child{ border-bottom:1px solid var(--line); }
+  .job .when{ font-family:var(--mono); font-size:12px; color:var(--ink-faint); letter-spacing:.03em; padding-top:4px;}
+  .job .who h3{ font-size:22px; text-transform:none; font-family:var(--serif); font-weight:700; margin-bottom:4px;}
+  .job .who .role{ font-family:var(--mono); font-size:12px; color:var(--teal); text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; display:block;}
+  .job .who p{ margin:0; color:var(--ink-soft); font-size:15.5px; }
+  .job .stamp{ justify-self:end; width:96px; height:96px; }
+
+  @media (max-width:760px){
+    .job{ grid-template-columns:1fr; gap:12px; }
+    .job .stamp{ justify-self:start; }
+  }
+
+  /* ============ CASE FILES ============ */
+  .case-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+  }
+  .case{
+    background:var(--panel);
+    border:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+  .case-doc-head{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    font-family:var(--mono);
+    font-size:9.5px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    border-bottom:1px dashed var(--line);
+  }
+  .case-doc-head div{ padding:10px 12px; border-right:1px dashed var(--line); }
+  .case-doc-head div:last-child{ border-right:none; }
+  .case-doc-head b{ display:block; color:var(--ink-soft); font-weight:600; font-size:11px; margin-top:2px; }
+
+  .case-media{ width:100%; height:190px; overflow:hidden; background:var(--paper-deep); display:flex; align-items:center; justify-content:center;}
+  .case-media img{ width:100%; height:100%; object-fit:cover; object-position:top; }
+
+  .case-body{ padding:22px 24px 26px; flex:1; display:flex; flex-direction:column; }
+  .case-body h3{ font-family:var(--serif); font-weight:700; font-size:21px; text-transform:none; margin-bottom:14px; line-height:1.25;}
+  .case-fields{ display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .case-fields .row{ font-size:14px; }
+  .case-fields .row .tag{ font-family:var(--mono); font-size:10px; color:var(--stamp-red); text-transform:uppercase; letter-spacing:.08em; margin-right:6px; }
+  .case-fields .row .tag.problem{ color:var(--ink-soft); }
+  .case-fields .row .tag.solution{ color:var(--teal); }
+  .case-fields .row .tag.impact{ color:var(--gold-text); }
+
+  .case-footer{
+    margin-top:auto; padding-top:16px; border-top:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  .case-keywords{ font-family:var(--mono); font-size:10.5px; color:var(--ink-faint); }
+  .case-link{
+    font-family:var(--mono); font-size:11px; text-decoration:none; color:var(--ink);
+    border-bottom:1px solid var(--ink); padding-bottom:2px; white-space:nowrap;
+  }
+  .case-link:hover{ color:var(--stamp-red); border-color:var(--stamp-red); }
+
+  @media (max-width:900px){ .case-grid{ grid-template-columns:1fr; } }
+
+  /* ============ PROJECTS ============ */
+  .proj-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  .proj{ background:var(--panel); border:1px solid var(--line); overflow:hidden; display:flex; flex-direction:column;}
+  .proj-shot{ background:var(--ink); padding:22px 22px 0; height:230px; overflow:hidden; display:flex; justify-content:center;}
+  .proj-shot img{ width:auto; height:100%; object-fit:cover; object-position:top; border-radius:6px 6px 0 0; box-shadow:0 -6px 18px rgba(0,0,0,.25);}
+  .proj-info{ padding:22px 24px 26px; flex:1; display:flex; flex-direction:column; }
+  .proj-info .status{ font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--teal); margin-bottom:10px;}
+  .proj-info .status.dev{ color:var(--gold-text); }
+  .proj-info h3{ font-family:var(--serif); font-weight:700; font-size:20px; text-transform:none; margin-bottom:10px; }
+  .proj-info p{ font-size:14.5px; color:var(--ink-soft); margin:0 0 18px; flex:1;}
+  .proj-info .case-link{ align-self:flex-start; }
+
+  @media (max-width:900px){ .proj-grid{ grid-template-columns:1fr; } }
+
+  /* ============ CREDENTIALS ============ */
+  #credentials .grid{ display:grid; grid-template-columns:1fr 1.3fr; gap:60px; }
+  .edu-card{ background:var(--panel); border:1px solid var(--line); padding:28px; }
+  .edu-card .school{ font-family:var(--serif); font-weight:700; font-size:20px; margin-bottom:4px;}
+  .edu-card .deg{ font-family:var(--mono); font-size:12px; color:var(--teal); margin-bottom:14px; display:block;}
+  .edu-card .meta{ font-size:14px; color:var(--ink-soft); margin:0; }
+  .edu-card .gpa{
+    margin-top:18px; padding-top:16px; border-top:1px dashed var(--line);
+    font-family:var(--mono); font-size:13px; color:var(--ink);
+  }
+
+  .cert-list{ list-style:none; margin:0; padding:0; }
+  .cert-list li{
+    display:grid; grid-template-columns:70px 1fr;
+    gap:18px; padding:16px 0; border-top:1px solid var(--line);
+    font-size:14.5px; align-items:baseline;
+  }
+  .cert-list li:last-child{ border-bottom:1px solid var(--line); }
+  .cert-list .yr{ font-family:var(--mono); font-size:12px; color:var(--stamp-red); }
+  .cert-list b{ color:var(--ink); font-weight:700; }
+  .cert-list span.desc{ color:var(--ink-soft); display:block; font-size:13.5px; margin-top:2px;}
+
+  @media (max-width:800px){ #credentials .grid{ grid-template-columns:1fr; } }
+
+  /* ============ CONTACT ============ */
+  #contact{ border-bottom:none; padding-bottom:70px; }
+  .contact-wrap{ display:flex; justify-content:space-between; align-items:flex-end; gap:40px; flex-wrap:wrap; }
+  .contact-wrap h2{
+    font-size:clamp(46px,8vw,96px); text-transform:uppercase; line-height:.94;
+  }
+  .contact-wrap h2 .accent{ color:var(--stamp-red); }
+  .contact-links{ display:flex; flex-direction:column; gap:14px; }
+  .contact-links a{
+    font-family:var(--mono); font-size:15px; text-decoration:none;
+    display:flex; align-items:center; gap:10px; padding-bottom:4px; border-bottom:1px solid var(--line);
+  }
+  .contact-links a:hover{ color:var(--stamp-red); border-color:var(--stamp-red); }
+
+  footer{
+    font-family:var(--mono); font-size:11px; color:var(--ink-faint);
+    padding:26px 0 40px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    letter-spacing:.03em;
+  }
+
+  /* ============ RESPONSIVE: mobile tab nav ============ */
+  @media (max-width:860px){
+    :root{ --tab-w:0px; }
+    .tabnav{
+      position:fixed; top:0; left:0; right:0; bottom:auto; width:100%; height:52px;
+      flex-direction:row; padding:0 14px; align-items:center; border-right:none;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      overflow-x:auto;
+    }
+    .tabnav .mark{ writing-mode:horizontal-tb; margin:0 18px 0 0; font-size:16px; }
+    .tabnav ul{ flex-direction:row; align-items:center; gap:2px; }
+    .tabnav a{ writing-mode:horizontal-tb; padding:8px 12px; border-left:none; border-bottom:2px solid transparent; white-space:nowrap;}
+    .tabnav a:hover, .tabnav a.active{ border-left:none; border-bottom-color:var(--stamp-red); }
+    .tabnav .foot{ display:none; }
+    main{ margin-left:0; margin-top:52px; }
+    .hero{ min-height:auto; padding-bottom:56px; flex-direction:column; align-items:center; }
+    .hero-inner{ padding-top:60px; padding-bottom:26px; order:1; }
+    .hero-photo{ position:relative; height:auto; width:62%; margin:30px auto 0; right:auto; bottom:auto; order:2; }
+    .hero-photo img{ width:100%; height:auto; }
+    .hero .field-marks{ display:none; }
+    .hero-watermark{ display:none; }
+    .scroll-cue{ display:none; }
+    .photo-stamp{ width:82px; height:82px; left:-4%; bottom:2%; }
+    .photo-stamp .num{ font-size:16px; }
+    .photo-stamp .lbl{ font-size:7px; max-width:60px; }
+    .hero-ticker{ height:40px; }
+    .ticker-track span{ font-size:10px; }
+    #about .grid{ grid-template-columns:1fr; gap:34px; }
+    .wrap{ padding:0 22px; }
+    section{ padding:70px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="tabnav" aria-label="Section navigation">
+  <div class="mark">ALFI<span>·</span>SNW</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#cases">Case&nbsp;Files</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="foot">FILE No. 0724</div>
+</nav>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero-watermark">PEOPLE OPS</div>
+
+    <div class="field-marks">
+      <span>Personnel File — Human Resources</span>
+      <span class="status">Open to work</span>
+    </div>
+
+    <div class="hero-photo">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+      <img src="assets/portrait.png" alt="Portrait of Alfi Syahr Nur Widenky">
+      <div class="stamp photo-stamp" data-stamp><span class="num">✓</span><span class="lbl">Verified Profile</span></div>
+    </div>
+
+    <div class="hero-inner">
+      <p class="eyebrow reveal" style="--d:.05s">Recruitment · Compliance · People Operations</p>
+      <h1>
+        <span class="reveal-line" style="--d:.12s">ALFI SYAHR</span><br>
+        <span class="reveal-line" style="--d:.2s">NUR <span class="last">WIDENKY</span></span>
+      </h1>
+      <p class="hero-role reveal" style="--d:.3s">Psychology graduate turned HR practitioner. I build the systems behind hiring, compliance, and performance — then I check whether they actually work.</p>
+
+      <div class="hero-cta reveal" style="--d:.38s">
+        <a href="#cases" class="btn btn-solid">View case files</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+
+      <div class="hero-doc-strip reveal" style="--d:.46s">
+        <div class="field"><span class="k">Education</span><span class="v">S.Psi — GPA 3.74/4.00</span></div>
+        <div class="field"><span class="k">Certified</span><span class="v">BNSP Human Capital Staff</span></div>
+        <div class="field"><span class="k">Based in</span><span class="v">Bangkalan, East Java, ID</span></div>
+        <div class="field"><span class="k">Sectors</span><span class="v">Healthcare · Pharmacy · Corporate</span></div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+      <span>Scroll</span>
+      <span class="arrow"></span>
+    </a>
+
+    <div class="hero-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>SATU SEHAT</span><span class="dot">·</span>
+        <span>SISDMK</span><span class="dot">·</span>
+        <span>BPJS</span><span class="dot">·</span>
+        <span>DISC ASSESSMENT</span><span class="dot">·</span>
+        <span>KRAEPELIN</span><span class="dot">·</span>
+        <span>KPI FRAMEWORK</span><span class="dot">·</span>
+        <span>PAYROLL</span><span class="dot">·</span>
+        <span>STRUCTURED ONBOARDING</span><span class="dot">·</span>
+        <span>SATU SEHAT</span><span class="dot">·</span>
+        <span>SISDMK</span><span class="dot">·</span>
+        <span>BPJS</span><span class="dot">·</span>
+        <span>DISC ASSESSMENT</span><span class="dot">·</span>
+        <span>KRAEPELIN</span><span class="dot">·</span>
+        <span>KPI FRAMEWORK</span><span class="dot">·</span>
+        <span>PAYROLL</span><span class="dot">·</span>
+        <span>STRUCTURED ONBOARDING</span><span class="dot">·</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">Who's in the file</h2>
+      <div class="grid">
+        <div class="about-copy">
+          <p>I'm a <strong>BNSP-certified HR professional</strong> with a psychology degree and a habit of turning messy hiring processes into ones that hold up under an audit. Most of my work lives at the intersection of two things people rarely put together: <em>full-cycle recruitment</em> and the unglamorous back-office task of wiring company data into Indonesia's national regulatory platforms — SATU SEHAT, SISDMK, BPJS — so nothing falls through the cracks.</p>
+          <p>My track record sits mostly in healthcare and pharmacy, but the toolkit travels: structured psychological assessments that make hiring decisions less of a gut call, KPI frameworks that tie performance to something you can actually measure, and recruitment systems built to keep working after I've handed them off.</p>
+          <p>I'm currently looking for an <strong>HR Specialist, HR Generalist, or People Operations</strong> role — healthcare or otherwise — where data-driven HR practices and compliance know-how can genuinely move the business forward.</p>
+        </div>
+        <div class="chip-row">
+          <div class="stamp" data-stamp><span class="num">40%</span><span class="lbl">faster time-to-hire</span></div>
+          <div class="stamp" data-stamp><span class="num">80+</span><span class="lbl">staff, zero audit findings</span></div>
+          <div class="stamp" data-stamp><span class="num">30%</span><span class="lbl">lift in applicant interest</span></div>
+          <div class="stamp" data-stamp><span class="num">100+</span><span class="lbl">candidates in talent pool</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <div class="wrap">
+      <p class="eyebrow">Experience</p>
+      <h2 class="section-title">Where I've worked</h2>
+
+      <div class="job">
+        <div class="when">Feb 2026 — Present</div>
+        <div class="who">
+          <h3>HR &amp; Operations Staff</h3>
+          <span class="role">Apotek Qu Farma</span>
+          <p>Built an end-to-end recruitment and KPI system on structured psychological assessments — replacing gut-feel hiring with something repeatable.</p>
+        </div>
+        <div class="stamp" data-stamp><span class="num">−40%</span><span class="lbl">time-to-hire</span></div>
+      </div>
+
+      <div class="job">
+        <div class="when">Oct 2025 — Jan 2026</div>
+        <div class="who">
+          <h3>HRD &amp; Legal Staff</h3>
+          <span class="role">RSU Lukas General Hospital</span>
+          <p>Integrated HR data for 80+ employees into SATU SEHAT and BPJS systems, closing gaps before they became audit findings.</p>
+        </div>
+        <div class="stamp" data-stamp><span class="num">0</span><span class="lbl">audit findings</span></div>
+      </div>
+
+      <div class="job">
+        <div class="when">Jan — Mar 2025</div>
+        <div class="who">
+          <h3>Project-Based HR</h3>
+          <span class="role">Apotek Ranc Farma</span>
+          <p>Designed the company's first recruitment SOP from scratch, replacing ad-hoc hiring with a documented, auditable process.</p>
+        </div>
+        <div class="stamp" data-stamp><span class="num">+30%</span><span class="lbl">applicant interest</span></div>
+      </div>
+
+      <div class="job">
+        <div class="when">Aug — Nov 2024</div>
+        <div class="who">
+          <h3>Psychology Internship</h3>
+          <span class="role">SMAN 1 Kamal</span>
+          <p>Ran counseling sessions and psychological assessments for 50+ students, turning test results into academic recommendation reports.</p>
+        </div>
+        <div class="stamp" data-stamp><span class="num">50+</span><span class="lbl">students assessed</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CASE FILES ============ -->
+  <section id="cases">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Case Files</p>
+          <h2 class="section-title">Documented wins</h2>
+        </div>
+        <p>Seven projects, each with a background, a problem, and a number at the end — pulled from the actual SOPs and dashboards I built on the job.</p>
+      </div>
+
+      <div class="case-grid">
+
+        <article class="case">
+          <div class="case-doc-head">
+            <div>Doc No.<b>ARF-HR-SOP-001</b></div>
+            <div>Client<b>Apotek Ranc Farma</b></div>
+            <div>Period<b>Jan–Mar 2025</b></div>
+            <div>Status<b style="color:var(--teal)">Closed · Live</b></div>
+          </div>
+          <div class="case-media"><img src="assets/sop_doc.png" alt="Recruitment and Selection SOP document"></div>
+          <div class="case-body">
+            <h3>Recruitment SOP redesign lifts applicant interest 30%</h3>
+            <div class="case-fields">
+              <div class="row"><span class="tag">Problem</span>No talent-pool system, and low applicant interest, made it hard to screen candidates objectively.</div>
+              <div class="row"><span class="tag solution">Solution</span>Wrote the company's first recruitment SOP, refreshed job descriptions, and built a digital talent pool of 100+ applicants.</div>
+              <div class="row"><span class="tag impact">Impact</span>Applicant interest up 30% within a month; 50+ candidates screened faster and fully documented.</div>
+            </div>
+            <div class="case-footer">
+              <span class="case-keywords">SOP · job descriptions · talent pool</span>
+              <a class="case-link" href="https://drive.google.com/drive/folders/13Yfnq4996H_1vhr69B6-1J8vhVltK69c?usp=drive_link" target="_blank" rel="noopener">Open source file →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-doc-head">
+            <div>Doc No.<b>AQF-HR-002</b></div>
+            <div>Client<b>Apotek Qu Farma</b></div>
+            <div>Period<b>2026</b></div>
+            <div>Status<b style="color:var(--teal)">Active</b></div>
+          </div>
+          <div class="case-media"><img src="assets/psych_doc.png" alt="Psychological assessment SOP document"></div>
+          <div class="case-body">
+            <h3>Psychometric hiring cuts time-to-hire 40%</h3>
+            <div class="case-fields">
+              <div class="row"><span class="tag">Problem</span>Candidate selection was slow, with no standardized way to assess fit.</div>
+              <div class="row"><span class="tag solution">Solution</span>Ran full-cycle recruitment using DISC, Kraepelin and IQ assessments, then structured onboarding and salary negotiation.</div>
+              <div class="row"><span class="tag impact">Impact</span>Time-to-hire down 40%, better candidate-role fit, and a 15% lift in operational efficiency.</div>
+            </div>
+            <div class="case-footer">
+              <span class="case-keywords">DISC · Kraepelin · IQ · onboarding</span>
+              <a class="case-link" href="https://drive.google.com/drive/folders/1DQUD_uUqAq2LlovC-O9RlI2ncW_ThQra?usp=drive_link" target="_blank" rel="noopener">Open source file →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-doc-head">
+            <div>Doc No.<b>RSL-HR-003</b></div>
+            <div>Client<b>RSU Lukas Hospital</b></div>
+            <div>Period<b>Oct '25–Jan '26</b></div>
+            <div>Status<b style="color:var(--teal)">Closed · Clear</b></div>
+          </div>
+          <div class="case-media"><img src="assets/compliance_dashboard.png" alt="Digital HR compliance dashboard"></div>
+          <div class="case-body">
+            <h3>80+ staff onboarded to national systems, zero findings</h3>
+            <div class="case-fields">
+              <div class="row"><span class="tag">Problem</span>Data for 80+ employees was scattered across systems, creating real audit risk.</div>
+              <div class="row"><span class="tag solution">Solution</span>Integrated HR and operational data into SATU SEHAT, SIMRS and RS Online, and administered BPJS via SIPP and Edabu — liaising directly with the District Health Office.</div>
+              <div class="row"><span class="tag impact">Impact</span>Full regulatory compliance with zero audit findings, plus accurate payroll and holiday allowance disbursement.</div>
+            </div>
+            <div class="case-footer">
+              <span class="case-keywords">SATU SEHAT · SISDMK · BPJS</span>
+              <a class="case-link" href="https://drive.google.com/drive/folders/1Gkfl3YjDnjZ-ZTu2idXeqmGHgryHg1Dh?usp=drive_link" target="_blank" rel="noopener">Open source file →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-doc-head">
+            <div>Doc No.<b>AQF-HR-004</b></div>
+            <div>Client<b>Apotek Qu Farma</b></div>
+            <div>Period<b>2026</b></div>
+            <div>Status<b style="color:var(--teal)">Active</b></div>
+          </div>
+          <div class="case-media"><img src="assets/payroll_dashboard.png" alt="Payroll optimization dashboard"></div>
+          <div class="case-body">
+            <h3>Payroll rebuild lifts operational efficiency 15%</h3>
+            <div class="case-fields">
+              <div class="row"><span class="tag">Problem</span>Payroll and revenue were tracked with no clear way to spot inefficiencies, quietly adding cost.</div>
+              <div class="row"><span class="tag solution">Solution</span>Took over monthly payroll administration and revenue monitoring, then streamlined the process end to end.</div>
+              <div class="row"><span class="tag impact">Impact</span>Operational efficiency up 15%, with more accurate disbursement and tighter cost control.</div>
+            </div>
+            <div class="case-footer">
+              <span class="case-keywords">payroll · cost control · reporting</span>
+              <a class="case-link" href="https://docs.google.com/spreadsheets/d/1lxuI-EVdxgwQj1fbCrrB3kky7fhqM6Bk/edit?usp=drive_link" target="_blank" rel="noopener">Open source file →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-doc-head">
+            <div>Doc No.<b>AQF-HR-KPI-001</b></div>
+            <div>Client<b>Apotek Qu Farma</b></div>
+            <div>Period<b>Feb 2026</b></div>
+            <div>Status<b style="color:var(--teal)">Active</b></div>
+          </div>
+          <div class="case-media"><img src="assets/kpi_doc.png" alt="KPI framework and performance appraisal SOP"></div>
+          <div class="case-body">
+            <h3>A KPI framework that ties reviews to real targets</h3>
+            <div class="case-fields">
+              <div class="row"><span class="tag">Problem</span>No structured link between performance reviews and measurable targets, so it was hard to tell who was meeting expectations.</div>
+              <div class="row"><span class="tag solution">Solution</span>Built a KPI-based appraisal system backed by routine psychological evaluations.</div>
+              <div class="row"><span class="tag impact">Impact</span>Team productivity held above target through ongoing, data-informed reviews.</div>
+            </div>
+            <div class="case-footer">
+              <span class="case-keywords">KPI · appraisal · psychological eval</span>
+              <a class="case-link" href="https://docs.google.com/document/d/1CnksrNwhMPoqbk3xBpCGaKmop8fpINRf/edit?usp=drive_link" target="_blank" rel="noopener">Open source file →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-doc-head">
+            <div>Doc No.<b>SMAN1K-05</b></div>
+            <div>Client<b>SMAN 1 Kamal</b></div>
+            <div>Period<b>Aug–Nov 2024</b></div>
+            <div>Status<b style="color:var(--teal)">Closed</b></div>
+          </div>
+          <div class="case-media"><img src="assets/counseling_photo.png" alt="Counseling session at SMAN 1 Kamal"></div>
+          <div class="case-body">
+            <h3>Counseling &amp; testing for 50+ students</h3>
+            <div class="case-fields">
+              <div class="row"><span class="tag">Problem</span>Students lacked individual guidance and objective data for academic and career decisions.</div>
+              <div class="row"><span class="tag solution">Solution</span>Ran individual counseling, IQ/DAT/RMIB test batteries, and group sessions on motivation and career planning.</div>
+              <div class="row"><span class="tag impact">Impact</span>Data-driven assessment reports with academic recommendations, and stronger exam and career readiness.</div>
+            </div>
+            <div class="case-footer">
+              <span class="case-keywords">counseling · IQ/DAT/RMIB</span>
+              <a class="case-link" href="https://drive.google.com/drive/folders/1RhN-WdGwGgqt9mkgSiGrxfyso3FSLeal?usp=sharing" target="_blank" rel="noopener">Open source file →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-doc-head">
+            <div>Doc No.<b>PPP-HR-006</b></div>
+            <div>Client<b>Pers Persona Psikologi</b></div>
+            <div>Period<b>2022–2023</b></div>
+            <div>Status<b style="color:var(--teal)">Closed</b></div>
+          </div>
+          <div class="case-media"><img src="assets/recruitment_dashboard.png" alt="Recruitment dashboard for Pers Persona Psikologi"></div>
+          <div class="case-body">
+            <h3>Head of HR Division — recruiting 50+ new members</h3>
+            <div class="case-fields">
+              <div class="row"><span class="tag">Problem</span>No structured recruitment or review system, so member selection and admin were inconsistent year to year.</div>
+              <div class="row"><span class="tag solution">Solution</span>Led recruitment through structured selection and interviews, ran monthly performance reviews, and built the division's HR admin system.</div>
+              <div class="row"><span class="tag impact">Impact</span>A repeatable recruitment process the organization still uses, and stronger internal HR administration.</div>
+            </div>
+            <div class="case-footer">
+              <span class="case-keywords">leadership · recruitment · org HR</span>
+              <a class="case-link" href="https://drive.google.com/drive/folders/1cKlxYv7by1Ev6X-HvQ9zzRVfGZykYeUg?usp=drive_link" target="_blank" rel="noopener">Open source file →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Personal Projects</p>
+          <h2 class="section-title">Built after hours</h2>
+        </div>
+        <p>Tools I built because the ones I needed for HR work didn't exist yet — or existed, but only for a price.</p>
+      </div>
+
+      <div class="proj-grid">
+        <div class="proj">
+          <div class="proj-shot"><img src="assets/cv_analyzer.png" alt="CV Analyzer app screenshot"></div>
+          <div class="proj-info">
+            <span class="status">Live · 2025–Present</span>
+            <h3>CV Analyzer</h3>
+            <p>A free tool that reads a CV against ATS logic — scoring compatibility and content quality, then handing back a downloadable report. No login required.</p>
+            <a class="case-link" href="https://alfisyahrnw-design.github.io/cv-analisis/" target="_blank" rel="noopener">Try it live →</a>
+          </div>
+        </div>
+        <div class="proj">
+          <div class="proj-shot"><img src="assets/psychometric.png" alt="PsychoMetric app screenshot"></div>
+          <div class="proj-info">
+            <span class="status">Live · 2025–Present</span>
+            <h3>PsychoMetric</h3>
+            <p>A science-backed testing platform — DISC, Myers-Briggs, Holland RIASEC, Big Five, emotional intelligence, even a depression screener — built to help people understand themselves, not just clear a hiring filter.</p>
+            <a class="case-link" href="https://alfisyahrnw-design.github.io/psikotest/" target="_blank" rel="noopener">Try it live →</a>
+          </div>
+        </div>
+        <div class="proj">
+          <div class="proj-shot"><img src="assets/alfi_hris.png" alt="Alfi HRIS app screenshot"></div>
+          <div class="proj-info">
+            <span class="status dev">In development</span>
+            <h3>Alfi HRIS</h3>
+            <p>An all-in-one HRIS built from scratch — employee records, automated payroll, real-time reporting, multi-level access. Everything I wished a spreadsheet-and-WhatsApp system could do.</p>
+            <a class="case-link" href="https://alfisyahrnw-design.github.io/alfi-hris/" target="_blank" rel="noopener">Preview →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CREDENTIALS ============ -->
+  <section id="credentials">
+    <div class="wrap">
+      <p class="eyebrow">Credentials</p>
+      <h2 class="section-title">Education &amp; certifications</h2>
+      <div class="grid">
+        <div class="edu-card">
+          <span class="school">University of Muhammadiyah Malang</span>
+          <span class="deg">Bachelor of Psychology (S.Psi.) · Accredited A</span>
+          <p class="meta">2019 — 2024</p>
+          <div class="gpa">GPA 3.74 / 4.00</div>
+        </div>
+
+        <ul class="cert-list">
+          <li><span class="yr">2025</span><div><b>BNSP — Human Capital Staff</b><span class="desc">Job description, social security admin, wage administration, MSDM policy</span></div></li>
+          <li><span class="yr">2025</span><div><b>MySkill — HR Fundamental</b><span class="desc">Recruitment process, Microsoft Office Suite</span></div></li>
+          <li><span class="yr">2026</span><div><b>Google Workspace Certified</b><span class="desc">11 skill badges</span></div></li>
+          <li><span class="yr">2026</span><div><b>HubSpot Academy</b><span class="desc">Digital marketing, social media, content marketing, inbound sales</span></div></li>
+          <li><span class="yr">2026</span><div><b>IBM SkillsBuild</b><span class="desc">Data Fundamentals &amp; Enterprise Design Thinking Practitioner</span></div></li>
+          <li><span class="yr">2026</span><div><b>PMI</b><span class="desc">Fundamentals of Predictive Project Management</span></div></li>
+          <li><span class="yr">2026</span><div><b>Canva</b><span class="desc">Visual Suite, Engaging Content, Creative Campaigns at Scale</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Get in touch</p>
+      <div class="contact-wrap">
+        <h2>Let's work<br>to<span class="accent">gether</span></h2>
+        <div class="contact-links">
+          <a href="mailto:alfisyahrnw@gmail.com">✉ alfisyahrnw@gmail.com</a>
+          <a href="https://www.linkedin.com/in/alfi-syahr-nur-widenky-306b51307/" target="_blank" rel="noopener">in LinkedIn — Alfi Syahr Nur Widenky</a>
+        </div>
+      </div>
+      <footer>
+        <span>© 2026 Alfi Syahr Nur Widenky — Personnel File No. 0724</span>
+        <span>Built with intent, not a template.</span>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Stamp-in animation on scroll
+  const stamps = document.querySelectorAll('[data-stamp]');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('stamped');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold:.4 });
+    stamps.forEach(s=>io.observe(s));
+  } else {
+    stamps.forEach(s=>s.classList.add('stamped'));
+  }
+
+  // Active tab highlighting
+  const navLinks = document.querySelectorAll('.tabnav a');
+  const sections = Array.from(navLinks).map(a=>document.querySelector(a.getAttribute('href')));
+  const setActive = ()=>{
+    let idx = 0;
+    const y = window.scrollY + 140;
+    sections.forEach((sec,i)=>{ if(sec && sec.offsetTop <= y) idx = i; });
+    navLinks.forEach(a=>a.classList.remove('active'));
+    if(navLinks[idx]) navLinks[idx].classList.add('active');
+  };
+  document.addEventListener('scroll', setActive, { passive:true });
+  setActive();
+</script>
+
+</body>
+</html>
